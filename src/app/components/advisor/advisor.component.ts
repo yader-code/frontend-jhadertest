@@ -36,10 +36,10 @@ export class AdvisorComponent implements OnInit {
       this.forma.value.specialty
     );
 
-    this._advisorService.createAdvisor( advisor )
-      .subscribe( resp => {
+    // this._advisorService.createAdvisor( advisor )
+      // .subscribe( resp => {
         console.log(advisor);
-    });
+    // });
 
   }
 

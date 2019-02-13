@@ -14,7 +14,6 @@ export class AdvisorService {
 
   createAdvisor(advisor: Advisor) {
     const url = ADVISOR_API + '/advisors';
-
     return this.http.post( url, advisor );
   }
 }

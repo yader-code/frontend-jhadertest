@@ -1,23 +1,60 @@
+<!--The content below is only a placeholder and can be replaced.-->
 <div class="row">
-  <div class="col-md-12">
-    <table class="table table-striped table-hover">
+  <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
+    <a id="modal" href="#modal-advisor" class="btn btn-info btn-sm float-right" data-toggle="modal">+</a>
+    <!-- FORM -->
+    <form  class="form form-horizontal" [formGroup]="forma" (ngSubmit)="createAdvisor()">
+      <div class="modal fade" id="modal-advisor" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="myModalLabel">
+              Create Advisor
+            </h5> 
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input formControlName="name" name="name" type="text" class="form-control" placeholder="Enter Name"/>
+            </div>
+            <div class="form-group">
+              <input formControlName="specialty" name="specialty" type="text" class="form-control" placeholder="Enter Specialty"/>
+            </div>		
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Save</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th>
-            Name
+            Nombre
           </th>
           <th>
             Specialty
+          </th>
+          <th>
+            Actions
           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            Jhader Palomeque Morneo
+            jhader palomeque moreno
           </td>
           <td>
-            Software Development
+            Software development
+          </td>
+          <td>
+            <a class="btn btn-primary btn-sm" href="#modal-advisor" data-toggle="modal" role="button">Edit</a>
           </td>
         </tr>
       </tbody>
