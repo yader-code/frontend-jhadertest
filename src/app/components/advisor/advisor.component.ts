@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AdvisorService } from 'src/app/services/service.idex';
 import { Advisor } from '../../models/advisor/advisor.model';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-advisor',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class AdvisorComponent implements OnInit {
 
   forma: FormGroup;
+
   constructor(
     public _advisorService: AdvisorService,
     public router: Router
@@ -25,10 +27,11 @@ export class AdvisorComponent implements OnInit {
     });
   }
 
-  createAdvisor() {
+  registerAdvisor() {
 
     if (this.forma.invalid ) {
-      return ;
+      swal('Importante', 'Debe llenar todos los campos', 'warning');
+      return;
     }
 
     const advisor = new Advisor(
@@ -36,10 +39,10 @@ export class AdvisorComponent implements OnInit {
       this.forma.value.specialty
     );
 
-    // this._advisorService.createAdvisor( advisor )
-      // .subscribe( resp => {
-        console.log(advisor);
-    // });
+    this._advisorService.createAdvisor( advisor )
+      .subscribe( resp => {
+        console.log(resp);
+    });
 
   }
 

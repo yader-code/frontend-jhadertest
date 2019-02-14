@@ -3,7 +3,7 @@
   <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
     <a id="modal" href="#modal-advisor" class="btn btn-info btn-sm float-right" data-toggle="modal">+</a>
     <!-- FORM -->
-    <form  class="form form-horizontal" [formGroup]="forma" (ngSubmit)="createAdvisor()">
+    <form  class="form form-horizontal" [formGroup]="forma" (ngSubmit)="registerAdvisor()">
       <div class="modal fade" id="modal-advisor" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -24,7 +24,7 @@
             </div>		
           </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">Save</button>
+              <button type="submit" class="btn btn-success" data-dismiss="modal">Save</button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
           </div>

@@ -26,6 +26,7 @@
               "src/styles.css"
             ],
             "scripts": [
+              "node_modules/sweetalert/dist/sweetalert.min.js"
             ]
           },
           "configurations": {
